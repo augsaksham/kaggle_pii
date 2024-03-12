@@ -29,6 +29,7 @@ modal run --detach train.py
 - `--run_id`: use your own run_id to track your training runs (otherwise will default to `mistral7b-finetune-%Y-%m-%d-%H-%M`)
 ```
 modal run train.py --run_id <run_id>
+modal run --detach train.py --run-id mistral_v1.2_800
 ```
 - `--resume-from-checkpoint`: resume training from a certain checkpoint saved to your results volume.
 ```

@@ -114,7 +114,7 @@ def finetune(
         return max_steps
     
 
-    def tokenize(sample, cutoff_len=512, add_eos_token=True):
+    def tokenize(sample, cutoff_len=6000, add_eos_token=True):
         prompt = sample["text"]
         result = tokenizer.__call__(
             prompt,
@@ -147,7 +147,7 @@ def finetune(
     gradient_accumulation_steps = 4
     max_steps = epochs_to_max_steps(num_epochs, total_train_samples, train_batch_size, gradient_accumulation_steps)
     save_steps = max_steps//5
-    print("Maximum number of steps:", max_steps)
+    print("******************************** Maximum number of steps:**********************************", max_steps)
 
     model.gradient_checkpointing_enable()
     model = prepare_model_for_kbit_training(model)
